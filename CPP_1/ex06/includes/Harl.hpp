@@ -10,9 +10,11 @@ class Harl {
 		void	_error( void );
 	
 	public:
-		Harl() {};
+		Harl();
+
 		void	complain( std::string level );
-		~Harl() {};
+		
+		~Harl();
 };
 
 #endif
