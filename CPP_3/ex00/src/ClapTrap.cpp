@@ -22,5 +22,13 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	void	ClapTrap::attack( const std::string& target ) {
-		
+		std::cout <<
+			"ClapTrap "
+			<< _name <<
+			" attacks "
+			<< target <<
+			" causing "
+			<< _damage <<
+			" points of damage!"
+		<< std::endl;
 	}
