@@ -1,5 +1,41 @@
 #include "PhoneBook.hpp"
 
+int is_valid_data(std::string* infos) {
+	for (int i = 0; infos[0][i]; i++) {
+		if (infos[0][i] < 65 || (infos[0][i] > 90 && infos[0][i] < 97) || infos[0][i] > 123) {
+			std::cout << "\033[2J\033[H";
+			std::cout << "The first name need to be only alphabetic" << std::endl;
+			return 0;
+		}
+	}
+	for (int i = 0; infos[1][i]; i++) {
+		if (infos[1][i] < 65 || (infos[1][i] > 90 && infos[1][i] < 97) || infos[1][i] > 123) {
+			std::cout << "\033[2J\033[H";
+			std::cout << "The last name need to be only alphabetic" << std::endl;
+			return 0;
+		}
+	}
+	for (int i = 0; infos[2][i]; i++) {
+		if (infos[2][i] < 65 || (infos[2][i] > 90 && infos[2][i] < 97) || infos[2][i] > 123) {
+			std::cout << "\033[2J\033[H";
+			std::cout << "The username need to be only alphabetic" << std::endl;
+			return 0;
+		}
+	}
+	for (int i = 0; infos[3][i]; i++) {
+		if (infos[3][0] != '+' || (infos[3][i] < 48 && infos[3][i] > 57) || i > 14  ) {
+			std::cout << "\033[2J\033[H";
+			std::cout << "The phone number needs to match +<13 digits max> format" << std::endl;
+			return 0;
+		}
+	}
+	if (infos[3].length() < 11) {
+		std::cout << "The phone number needs to match +<13 digits max> format" << std::endl;
+		return 0;
+	}
+	return 1;
+}
+
 int main() {
 	PhoneBook phonebook;
 	int error;
@@ -35,9 +71,10 @@ int main() {
 					break ;
 				}
 			}
-			if (!error)
+			if (!error && is_valid_data(infos)) {
 				phonebook.addContact(infos);
-			std::cout << "\033[2J\033[H";
+				std::cout << "\033[2J\033[H";
+			}
 		}
 		if (input == "search")
 		{
