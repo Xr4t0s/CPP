@@ -5,4 +5,5 @@ int main( void ) {
 
 	ct.attack("Bar");
 	ct.takeDamage(20);
+	ct.beRepaired(10);
 }

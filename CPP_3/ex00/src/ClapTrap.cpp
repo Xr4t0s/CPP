@@ -36,7 +36,7 @@
 			<< target <<
 			" causing "
 			<< _damage <<
-			" points of damage!"
+			" damage points!"
 		<< std::endl;
 	}
 
@@ -49,7 +49,7 @@
 			<< _name <<
 			" took "
 			<< amount <<
-			" damages."
+			" damage points."
 		<< std::endl;
 	}
 	
