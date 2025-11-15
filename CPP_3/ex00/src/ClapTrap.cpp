@@ -6,29 +6,61 @@
 		_name(name),
 		_health(10),
 		_stamina(10),
-		_damage(0) {}
+		_damage(0) 
+	{
+		std::cout << "Default constructor called !" << std::endl;
+	}
 
 	ClapTrap::ClapTrap( const ClapTrap& copy ) {
+		std::cout << "Copy constructor called !" << std::endl;
 		*this = copy;
 	}
 
 	ClapTrap& ClapTrap::operator=( ClapTrap const& rhs ) {
+		std::cout << "Assignation constructor called !" << std::endl;
 		(void)rhs;
 		return *this;
 	}
 
-	ClapTrap::~ClapTrap() {}
+	ClapTrap::~ClapTrap() {
+		std::cout << "Default destructor called !" << std::endl;
+	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	void	ClapTrap::attack( const std::string& target ) {
 		std::cout <<
-			"ClapTrap "
+			"ClapTrap named "
 			<< _name <<
 			" attacks "
 			<< target <<
 			" causing "
 			<< _damage <<
 			" points of damage!"
+		<< std::endl;
+	}
+
+	void	ClapTrap::takeDamage( unsigned int amount ) {
+		_health -= amount;
+		if (_health < 0) _health = 0;
+	
+		std::cout <<
+			"ClapTrap named "
+			<< _name <<
+			" took "
+			<< amount <<
+			" damages."
+		<< std::endl;
+	}
+	
+	void	ClapTrap::beRepaired( unsigned int amount ) {
+		_health += amount;
+		
+		std::cout <<
+			"ClapTrap named "
+			<< _name <<
+			" gained "
+			<< amount <<
+			" health points."
 		<< std::endl;
 	}
