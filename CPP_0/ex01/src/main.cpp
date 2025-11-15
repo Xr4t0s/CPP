@@ -23,13 +23,14 @@ int is_valid_data(std::string* infos) {
 		}
 	}
 	for (int i = 0; infos[3][i]; i++) {
-		if (infos[3][0] != '+' || (infos[3][i] < 48 && infos[3][i] > 57) || i > 14  ) {
+		if ((infos[3][i] < 48 && infos[3][i] > 57) || i > 15  ) {
 			std::cout << "\033[2J\033[H";
 			std::cout << "The phone number needs to match +<13 digits max> format" << std::endl;
 			return 0;
 		}
 	}
-	if (infos[3].length() < 11) {
+	if (infos[3].length() < 10) {
+		std::cout << "\033[2J\033[H";
 		std::cout << "The phone number needs to match +<13 digits max> format" << std::endl;
 		return 0;
 	}
@@ -67,6 +68,7 @@ int main() {
 			for (int i = 0; i < 5; i++) {
 				if (infos[i].empty() || infos[i] == "\n" ) {
 					error = -1;
+					std::cout << "\033[2J\033[H";
 					std::cout << "Invalid parameters in the requests" << std::endl;
 					break ;
 				}
