@@ -2,13 +2,15 @@
 
 int main() {
 	PhoneBook phonebook;
+	int error;
 
 	while (1)
 	{
+		error = 0;
 		std::string input;
 
 		std::cout << "What do you want to do ? (ADD, SEARCH, EXIT)\n> ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 		for (int i = 0; input[i]; i++)
 			input[i] = std::tolower(input[i]);
 		std::cout << "\033[2J\033[H";
@@ -16,12 +18,25 @@ int main() {
 		{
 			std::string infos[5];
 			std::cout << "Enter the new contact information :" << std::endl;
-			std::cout << "\tFirst name : "; std::cin >> infos[0];
-			std::cout << "\tLast name : "; std::cin >> infos[1];
-			std::cout << "\tNickname : "; std::cin >> infos[2];
-			std::cout << "\tPhone number : "; std::cin >> infos[3];
-			std::cout << "\tDarkest secret : "; std::cin >> infos[4];
-			phonebook.addContact(infos);
+			std::cout << "\tFirst name : ";
+			std::getline(std::cin, infos[0]);
+			std::cout << "\tLast name : ";
+			std::getline(std::cin, infos[1]);
+			std::cout << "\tNickname : ";
+			std::getline(std::cin, infos[2]);
+			std::cout << "\tPhone number : ";
+			std::getline(std::cin, infos[3]);
+			std::cout << "\tDarkest secret : ";
+			std::getline(std::cin, infos[4]);
+			for (int i = 0; i < 5; i++) {
+				if (infos[i].empty() || infos[i] == "\n" ) {
+					error = -1;
+					std::cout << "Invalid parameters in the requests" << std::endl;
+					break ;
+				}
+			}
+			if (!error)
+				phonebook.addContact(infos);
 		}
 		if (input == "search")
 		{
