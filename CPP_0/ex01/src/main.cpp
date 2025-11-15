@@ -37,6 +37,7 @@ int main() {
 			}
 			if (!error)
 				phonebook.addContact(infos);
+			std::cout << "\033[2J\033[H";
 		}
 		if (input == "search")
 		{
@@ -45,7 +46,13 @@ int main() {
 			std::cout << "Enter the contact index you want to display : ";
 			std::getline(std::cin, index);
 			std::cout << "\033[2J\033[H";
-			if (index == "1")
+			for (int i = 0; i < 8; i++) {
+				if (index != "1" && index != "2" && index != "3" && index != "4" && index != "5" && index != "6" && index != "7" && index != "8")
+					error = -1;
+			}
+			if (error)
+				std::cout << "You have to enter a number between 1 and 8" << std::endl;
+			else if (index == "1")
 				phonebook.searchContact(1);
 			else if (index == "2")
 				phonebook.searchContact(2);
