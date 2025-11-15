@@ -42,7 +42,8 @@ int main() {
 		{
 			std::string index;
 			phonebook.displayContacts();
-			std::cout << "Enter the contact index you want to display : "; std::cin >> index;
+			std::cout << "Enter the contact index you want to display : ";
+			std::getline(std::cin, index);
 			std::cout << "\033[2J\033[H";
 			if (index == "1")
 				phonebook.searchContact(1);
