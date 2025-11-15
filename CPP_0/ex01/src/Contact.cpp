@@ -25,6 +25,11 @@ void	Contact::create(std::string* infos) {
 }
 
 void	Contact::display( void ) const {
+	if (_first_name == "") {
+		std::cout << "\033[2J\033[H";
+		std::cout << "This contact is empty !\nAdd one using the ADD command." << std::endl;
+		return ;
+	}
 	std::cout << "First name\t : " << _first_name << std::endl;
 	std::cout << "Last name\t : " << _last_name << std::endl;
 	std::cout << "Nickname\t : " << _nickname << std::endl;
