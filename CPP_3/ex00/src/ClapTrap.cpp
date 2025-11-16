@@ -30,8 +30,7 @@
 
 	void	ClapTrap::attack( const std::string& target ) {
 		std::cout <<
-			"ClapTrap named "
-			<< _name <<
+			_name <<
 			" attacks "
 			<< target <<
 			" causing "
@@ -45,8 +44,7 @@
 		if (_health < 0) _health = 0;
 	
 		std::cout <<
-			"ClapTrap named "
-			<< _name <<
+			_name <<
 			" took "
 			<< amount <<
 			" damage points."
@@ -57,8 +55,7 @@
 		_health += amount;
 		
 		std::cout <<
-			"ClapTrap named "
-			<< _name <<
+			_name <<
 			" gained "
 			<< amount <<
 			" health points."
