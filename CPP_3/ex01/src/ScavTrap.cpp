@@ -29,3 +29,14 @@ ScavTrap::~ScavTrap() {
 void	ScavTrap::guardGate() {
 	std::cout << "ScavTrap is now in gateKeeper mode !" << std::endl;
 }
+
+void	ScavTrap::attack( const std::string& target ) {
+	std::cout <<
+		_name <<
+		" attacks furiously "
+		<< target <<
+		" causing "
+		<< _damage <<
+		" mega damage points!"
+	<< std::endl;
+}
