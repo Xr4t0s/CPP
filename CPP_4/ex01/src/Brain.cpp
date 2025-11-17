@@ -1,6 +1,7 @@
 #include "Brain.hpp"
 
-Brain::Brain() : _ideas({ nullptr }) {
+Brain::Brain() {
+	std::cout << this->_ideas[0] << std::endl;
 	std::cout << "Default Brain constructor called" << std::endl;  
 }
 
@@ -16,5 +17,5 @@ Brain Brain::operator=( const Brain& rhs ) {
 }
 
 Brain::~Brain() {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
