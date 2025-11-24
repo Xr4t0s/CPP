@@ -3,17 +3,20 @@
 
 int main()
 {
-	Weapon mear("hache de guerre");
-
-	HumanA	toto("Toto", mear);
-	toto.attack();
-	mear.setType("rafleuz");
-	toto.attack();
-	HumanB	rina("Rina");
-	mear.setType("hache de guerre");
-	rina.attack();
-	rina.setWeapon(mear);
-	mear.setType("rafleuz");
-	rina.attack();
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return 0;
 }
