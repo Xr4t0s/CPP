@@ -1,6 +1,8 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() {}
+Zombie::Zombie() {
+	std::cout << "Default Constructor called." << std::endl;
+}
 
 void	Zombie::set_name( std::string name ) {
 	_name = name;

@@ -1,6 +1,8 @@
 #include "Harl.hpp"
 
-Harl::Harl() {}
+Harl::Harl() {
+	std::cout << "Harl Constructor called." << std::endl;
+}
 
 void	Harl::complain( std::string level ) {
 	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
@@ -37,4 +39,6 @@ void	Harl::_error( void ) {
 	std::cout << "[ERROR] " << "Hi i'm tellings your errors" << std::endl;
 }
 
-Harl::~Harl() {}
+Harl::~Harl() {
+	std::cout << "Harl Destructor called." << std::endl;
+}
