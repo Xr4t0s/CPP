@@ -1,7 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
-	this->_brain = new Brain();
+Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
@@ -18,6 +17,9 @@ Cat& Cat::operator=( Cat const& rhs ) {
 
 Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
-	delete this->_brain;
-	this->_brain = NULL;
+	delete _brain;
+}
+
+void	Cat::makeSound( void ) const {
+	std::cout << "Miaouu!!" << std::endl;
 }

@@ -1,33 +1,41 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main() {
-    const Animal* animals[10];
-
-    for (int i = 0; i < 5; ++i) {
-        animals[i] = new Cat();
-    }
-	for (int i = 5; i < 10; ++i) {
-        animals[i] = new Dog();
-    }
-
+int main()
+{
+	Animal* j = new Dog();
+	Animal* i = new Cat();
+	std::cout << std::endl;
+	delete j;//should not create a leak
+	delete i;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	
-	for (int i = 0; i < 10; ++i) {
-    	std::cout << animals[i]->getType() << std::endl;
+	j = new Dog();
+	i = new Cat();
+	Animal* meta = new Animal();
+	std::cout << std::endl;
+	
+	j->makeSound();
+	i->makeSound();
+	meta->makeSound();
+	std::cout << std::endl;
+	
+	delete j;
+	delete i;
+	delete meta;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	Animal* arr[100];
+
+	for (int index = 0; index < 100; index++) {
+		index > 50 ? arr[index] = new Dog() : arr[index] = new Cat();
 	}
-	
-    for (int i = 0; i < 10; ++i) {
-        delete animals[i];
-    }
-
-    return 0;
+	for (int index = 0; index < 100; index++) {
+		arr[index]->makeSound();
+	}
+	for (int index = 0; index < 100; index++) {
+		delete arr[index];
+	}
 }
-
-
-// int main() {
-// 	const Animal* a = new Dog();
-// 	const Animal* b = new Cat();
-
-// 	delete a;
-// 	delete b;
-// }

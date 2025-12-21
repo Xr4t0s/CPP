@@ -25,14 +25,8 @@ Animal::~Animal() {
 }
 
 
-void	Animal::makeSound( void ) {
-	if (_type == "Cat") {
-		std::cout << "Miaou !" << std::endl;
-	} else if (_type == "Dog") {
-		std::cout << "Wouf !" << std::endl;
-	} else {
-		std::cout << "Some sound..." << std::endl;
-	}
+void	Animal::makeSound( void ) const {
+	std::cout << "Some sound..." << std::endl;
 }
 
 std::string	Animal::getType( void ) const {
