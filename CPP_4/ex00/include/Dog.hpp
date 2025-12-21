@@ -9,6 +9,8 @@ class Dog : public Animal {
 		Dog( const Dog& copy );
 		Dog&	operator=( Dog const& rhs );
 
+		void	makeSound( void ) const;
+
 		~Dog();
 };
 
