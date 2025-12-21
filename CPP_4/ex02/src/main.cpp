@@ -1,27 +1,13 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-int main() {
-    const AAnimal* a = new Dog();
-	a->makeSound();
-	std::cout << "Type of Dog -> " << a->getType() << std::endl;
-
+int main()
+{
+	AAnimal* j = new Dog();
+	AAnimal* i = new Cat();
 	std::cout << std::endl;
-	
-    const AAnimal* b = new Cat();
-	b->makeSound();
-	std::cout << "Type of Cat -> " << b->getType() << std::endl;
-	
-	std::cout << std::endl;
+	delete j;
+	delete i;
 
-	delete b;
+	// AAnimal* x = new Animal(); // this is impossible bc AAnimal class is an abstraction
 }
-
-
-// int main() {
-// 	const Animal* a = new Dog();
-// 	const Animal* b = new Cat();
-
-// 	delete a;
-// 	delete b;
-// }

@@ -6,16 +6,16 @@
 
 class Cat : public AAnimal {
 	private:
-		Brain*	_brain;
+		Brain* _brain;
 
 	public:
 		Cat();
 		Cat( const Cat& copy );
 		Cat&	operator=( Cat const& rhs );
 
-		virtual	void	makeSound( void ) const;
+		void	makeSound( void ) const;
 
-		virtual ~Cat();
+		~Cat();
 };
 
 #endif

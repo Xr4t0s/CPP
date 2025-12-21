@@ -6,16 +6,16 @@
 
 class Dog : public AAnimal {
 	private:
-		Brain*	_brain;
-	
+		Brain* _brain;
+
 	public:
 		Dog();
 		Dog( const Dog& copy );
 		Dog&	operator=( Dog const& rhs );
 
-		virtual	void	makeSound( void ) const;
- 
-		virtual ~Dog();
+		void	makeSound( void ) const;
+
+		~Dog();
 };
 
 #endif

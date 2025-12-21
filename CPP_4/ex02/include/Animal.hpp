@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AAnimal_HPP
+#define AAnimal_HPP
 
 #include <iostream>
 
@@ -9,12 +9,13 @@ class AAnimal {
 
 	public:
 		AAnimal();
-		AAnimal( std::string name );
 		AAnimal( const AAnimal& copy );
 		AAnimal&	operator=( AAnimal const& rhs );
 
+		AAnimal( std::string name );
 		virtual void	makeSound( void ) const = 0;
-		std::string		getType( void ) const;
+
+		std::string	getType( void ) const;
 
 		virtual ~AAnimal();
 };
