@@ -1,4 +1,4 @@
-NAME    = brained
+NAME    = abstract
 SRC     = 	src/main.cpp \
 			src/Dog.cpp \
 			src/Cat.cpp \

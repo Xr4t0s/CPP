@@ -2,21 +2,32 @@
 #include "Dog.hpp"
 
 int main() {
-	Animal* animal = new Animal();
-	animal->makeSound();
-	std::cout << "Animal type :\t" << animal->getType() << std::endl;
-	delete animal;
-	std::cout << std::endl;
+    const Animal* animals[10];
+
+    for (int i = 0; i < 5; ++i) {
+        animals[i] = new Cat();
+    }
+	for (int i = 5; i < 10; ++i) {
+        animals[i] = new Dog();
+    }
+
 	
-	Cat* cat = new Cat();
-	cat->makeSound();
-	std::cout << "Cat type :\t" << cat->getType() << std::endl;
-	delete cat;
-	std::cout << std::endl;
+	for (int i = 0; i < 10; ++i) {
+    	std::cout << animals[i]->getType() << std::endl;
+	}
 	
-	
-	Dog* dog = new Dog();
-	dog->makeSound();
-	std::cout << "Dog type :\t" << dog->getType() << std::endl;
-	delete dog;
+    for (int i = 0; i < 10; ++i) {
+        delete animals[i];
+    }
+
+    return 0;
 }
+
+
+// int main() {
+// 	const Animal* a = new Dog();
+// 	const Animal* b = new Cat();
+
+// 	delete a;
+// 	delete b;
+// }

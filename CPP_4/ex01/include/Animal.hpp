@@ -17,7 +17,7 @@ class Animal {
 
 		std::string	getType( void ) const;
 
-		~Animal();
+		virtual ~Animal();
 };
 
 #endif
