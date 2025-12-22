@@ -1,5 +1,29 @@
-#include "AMateria.hpp"
+#include "materias/AMateria.hpp"
 
-AMateria::AMateria( const std::string& type ) : _type(type) {}
-const std::string& AMateria::getType() const { return _type; }
+AMateria::AMateria( void ) : _type("") {
+	std::cout << "Materia default constructor called" << std::endl;
+};
+
+AMateria::AMateria( const AMateria& copy ) {
+	*this = copy;
+	std::cout << "Materia copy constructor called" << std::endl;
+};
+
+AMateria::AMateria( const std::string& type ) : _type(type) {
+	std::cout << "Materia type constructor called" << std::endl;
+};
+
+AMateria&	AMateria::operator=( const AMateria& rhs ) {
+	(void)rhs;
+	return *this;
+}
+
+AMateria::~AMateria() {
+	std::cout << "Materia destructor called" << std::endl;
+}
+
+const std::string& AMateria::getType( void ) const {
+	return _type;
+}
+
 

@@ -1,7 +1,7 @@
 #ifndef __ICE_HPP__
 #define __ICE_HPP__
 
-#include "AMateria.hpp"
+#include "materias/AMateria.hpp"
 
 class Ice : public AMateria {
 	
@@ -9,6 +9,10 @@ class Ice : public AMateria {
 		Ice();
 		Ice( const Ice& copy );
 		Ice& operator=( const Ice& rhs );
+
+		AMateria* clone() const;
+		// void use(ICharacter& target);
+
 		~Ice();
 };
 
