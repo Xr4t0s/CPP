@@ -1,11 +1,11 @@
 #include "materias/AMateria.hpp"
+#include "character/ICharacter.hpp"
 
 AMateria::AMateria( void ) : _type("") {
 	std::cout << "Materia default constructor called" << std::endl;
 };
 
-AMateria::AMateria( const AMateria& copy ) {
-	*this = copy;
+AMateria::AMateria( const AMateria& copy ) : _type(copy._type) {
 	std::cout << "Materia copy constructor called" << std::endl;
 };
 
@@ -25,5 +25,6 @@ AMateria::~AMateria() {
 const std::string& AMateria::getType( void ) const {
 	return _type;
 }
+
 
 

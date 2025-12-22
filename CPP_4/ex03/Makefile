@@ -1,13 +1,14 @@
-NAME    = abstract
+NAME    = interfaces
 SRC     = 	src/main.cpp \
-			src/Dog.cpp \
-			src/Cat.cpp \
-			src/Animal.cpp \
-			src/Brain.cpp
+			src/materias/Ice.cpp \
+			src/materias/Cure.cpp \
+			src/materias/AMateria.cpp \
+			src/character/Character.cpp  \
+			src/sources/MateriaSource.cpp
 OBJ     = $(SRC:.cpp=.o)
 CXX     = c++
 CF      = -Wall -Wextra -Werror -std=c++98 -g
-INC             = -I include/
+INC     = -I include/
 
 all: $(NAME)
 
