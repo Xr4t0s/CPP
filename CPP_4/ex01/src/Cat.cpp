@@ -4,14 +4,19 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat& copy ) : Animal() {
+Cat::Cat( const Cat& copy ) : Animal("Cat") {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = copy;
+	_brain = new Brain(*copy._brain);
 }
 
 Cat& Cat::operator=( Cat const& rhs ) {
 	std::cout << "Cat assignation constructor called" << std::endl;
-	(void)rhs;
+	if (this != &rhs) {
+		Animal::operator=(rhs);
+
+		delete this->_brain;
+		_brain = new Brain(*rhs._brain);
+	}
 	return *this;
 }
 

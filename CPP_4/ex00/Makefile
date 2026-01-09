@@ -2,7 +2,9 @@ NAME    = polymorph
 SRC     = 	src/main.cpp \
 			src/Dog.cpp \
 			src/Cat.cpp \
-			src/Animal.cpp
+			src/Animal.cpp \
+			src/WrongAnimal.cpp \
+			src/WrongCat.cpp
 OBJ     = $(SRC:.cpp=.o)
 CXX     = c++
 CF      = -Wall -Wextra -Werror -std=c++98 -g

@@ -11,7 +11,11 @@ Brain::Brain( const Brain& copy ) {
 
 Brain& Brain::operator=( const Brain& rhs ) {
 	std::cout << "Brain assignation constructor called" << std::endl;
-	(void)rhs;
+	if (this != &rhs) {
+		for (int i = 0; i < 100; i++) {
+			this->_ideas[i] = rhs._ideas[i];
+		}
+	}
 	return *this;
 }
 
