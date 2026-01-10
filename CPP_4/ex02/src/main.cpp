@@ -1,13 +1,13 @@
-#include "Cat.hpp"
+#include <iostream>
+#include "AAnimal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
 
 int main()
 {
-	AAnimal* j = new Dog();
-	AAnimal* i = new Cat();
-	std::cout << std::endl;
-	delete j;
-	delete i;
+	AAnimal animal; // impossible
+	Dog		dog; // no problem
+	Cat		cat; // no problem too
 
-	// AAnimal* x = new Animal(); // this is impossible bc AAnimal class is an abstraction
+	return 0;
 }

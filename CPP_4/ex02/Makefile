@@ -2,7 +2,7 @@ NAME    = abstract
 SRC     = 	src/main.cpp \
 			src/Dog.cpp \
 			src/Cat.cpp \
-			src/Animal.cpp \
+			src/AAnimal.cpp \
 			src/Brain.cpp
 OBJ     = $(SRC:.cpp=.o)
 CXX     = c++

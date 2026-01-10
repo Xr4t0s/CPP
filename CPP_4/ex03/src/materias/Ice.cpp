@@ -4,9 +4,8 @@ Ice::Ice() : AMateria("ice") {
 	std::cout << "Ice default constructor called." << std::endl;
 }
 
-Ice::Ice( const Ice& copy ) : AMateria("ice") {
+Ice::Ice( const Ice& copy ) : AMateria(copy) {
 	std::cout << "Ice copy constructor called." << std::endl;
-	this->_type = copy._type;
 }
 
 Ice& Ice::operator=( const Ice& rhs ) {

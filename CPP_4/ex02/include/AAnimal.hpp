@@ -1,7 +1,9 @@
-#ifndef AAnimal_HPP
-#define AAnimal_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
+
+#include "Brain.hpp"
 
 class AAnimal {
 	protected:
@@ -9,10 +11,10 @@ class AAnimal {
 
 	public:
 		AAnimal();
+		AAnimal( std::string name );
 		AAnimal( const AAnimal& copy );
 		AAnimal&	operator=( AAnimal const& rhs );
 
-		AAnimal( std::string name );
 		virtual void	makeSound( void ) const = 0;
 
 		std::string	getType( void ) const;

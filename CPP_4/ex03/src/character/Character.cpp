@@ -10,9 +10,8 @@ Character::Character(const std::string& name) : ICharacter(), _name(name) {
 	for (int i = 0; i < 4; i++) _bag[i] = NULL;
 }
 
-Character::Character( const Character& copy ) {
+Character::Character( const Character& copy ) : _name(copy._name) {
 	std::cout << "Character copy constructor called" << std::endl;
-	this->_name = copy.getName();
 	for (int i = 0; i < 4; i++) {
 		if (copy._bag[i] != NULL) {
 			this->_bag[i] = copy._bag[i]->clone();
@@ -56,7 +55,7 @@ void	Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (_bag[i] == NULL) {
 			_bag[i] = m;
-			break;
+			return;
 		}
 	}
 }

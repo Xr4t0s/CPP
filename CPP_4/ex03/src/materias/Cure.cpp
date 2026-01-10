@@ -4,9 +4,8 @@ Cure::Cure() : AMateria("cure") {
 	std::cout << "Cure default constructor called." << std::endl;
 }
 
-Cure::Cure( const Cure& copy ) : AMateria("cure") {
+Cure::Cure( const Cure& copy ) : AMateria(copy) {
 	std::cout << "Cure copy constructor called." << std::endl;
-	this->_type = copy._type;
 }
 
 Cure& Cure::operator=( const Cure& rhs ) {

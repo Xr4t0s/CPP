@@ -14,12 +14,17 @@ AMateria::AMateria( const std::string& type ) : _type(type) {
 };
 
 AMateria&	AMateria::operator=( const AMateria& rhs ) {
-	(void)rhs;
+	if (this != &rhs) _type = rhs._type;
+	
 	return *this;
 }
 
 AMateria::~AMateria() {
 	std::cout << "Materia destructor called" << std::endl;
+}
+
+void	AMateria::use(ICharacter& target) {
+	(void)target;
 }
 
 const std::string& AMateria::getType( void ) const {
