@@ -1,23 +1,24 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal() : _type("EMPTY") {
+WrongAnimal::WrongAnimal() : _type("WrongAnimal") {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal& copy ) {
+WrongAnimal::WrongAnimal( std::string name ) : _type(name) {
+	std::cout << "WrongAnimal personnal constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal( const WrongAnimal& copy ) : _type("WrongAnimal") {
+	(void)copy;
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
-	*this = copy;
 }
 
 WrongAnimal& WrongAnimal::operator=( WrongAnimal const& rhs ) {
 	std::cout << "WrongAnimal assignation constructor called" << std::endl;
-	(void)rhs;
+	if (this != &rhs) {
+		_type = rhs._type;
+	}
 	return *this;
-}
-
-// constructeur perso
-WrongAnimal::WrongAnimal( std::string name ) : _type(name) {
-	std::cout << "WrongAnimal personnal constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal() {
@@ -26,7 +27,7 @@ WrongAnimal::~WrongAnimal() {
 
 
 void	WrongAnimal::makeSound( void ) const {
-	std::cout << "Some sound..." << std::endl;
+	std::cout << "Some wrong sound..." << std::endl;
 }
 
 std::string	WrongAnimal::getType( void ) const {
