@@ -4,9 +4,8 @@ Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat( const Cat& copy ) : Animal("Cat") {
+Cat::Cat( const Cat& copy ) : Animal(copy), _brain(new Brain(*copy._brain)) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	_brain = new Brain(*copy._brain);
 }
 
 Cat& Cat::operator=( Cat const& rhs ) {
@@ -23,6 +22,10 @@ Cat& Cat::operator=( Cat const& rhs ) {
 Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
 	delete _brain;
+}
+
+Brain*	Cat::getBrain() const {
+	return _brain;
 }
 
 void	Cat::makeSound( void ) const {

@@ -1,23 +1,24 @@
 #include "Animal.hpp"
 
-Animal::Animal() : _type("EMPTY") {
+Animal::Animal() : _type("Animal") {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal( const Animal& copy ) {
+Animal::Animal( std::string name ) : _type(name) {
+	std::cout << "Animal personnal constructor called" << std::endl;
+}
+
+Animal::Animal( const Animal& copy ) : _type("Animal") {
+	(void)copy;
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = copy;
 }
 
 Animal& Animal::operator=( Animal const& rhs ) {
 	std::cout << "Animal assignation constructor called" << std::endl;
-	(void)rhs;
+	if (this != &rhs) {
+		_type = rhs._type;
+	}
 	return *this;
-}
-
-// constructeur perso
-Animal::Animal( std::string name ) : _type(name) {
-	std::cout << "Animal personnal constructor called" << std::endl;
 }
 
 Animal::~Animal() {

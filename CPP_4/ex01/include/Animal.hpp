@@ -3,16 +3,18 @@
 
 #include <iostream>
 
+#include "Brain.hpp"
+
 class Animal {
 	protected:
 		std::string _type;
 
 	public:
 		Animal();
+		Animal( std::string name );
 		Animal( const Animal& copy );
 		Animal&	operator=( Animal const& rhs );
 
-		Animal( std::string name );
 		virtual void	makeSound( void ) const;
 
 		std::string	getType( void ) const;
