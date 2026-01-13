@@ -16,7 +16,7 @@ Animal::Animal( const Animal& copy ) : _type("Animal") {
 Animal& Animal::operator=( Animal const& rhs ) {
 	std::cout << "Animal assignation constructor called" << std::endl;
 	if (this != &rhs) {
-		_type = rhs._type;
+		_type = "Animal";
 	}
 	return *this;
 }

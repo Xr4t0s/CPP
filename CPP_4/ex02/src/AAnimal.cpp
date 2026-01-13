@@ -16,7 +16,7 @@ AAnimal::AAnimal( const AAnimal& copy ) : _type("AAnimal") {
 AAnimal& AAnimal::operator=( AAnimal const& rhs ) {
 	std::cout << "AAnimal assignation constructor called" << std::endl;
 	if (this != &rhs) {
-		_type = rhs._type;
+		_type = "Animal";
 	}
 	return *this;
 }

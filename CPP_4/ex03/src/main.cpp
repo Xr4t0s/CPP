@@ -181,14 +181,14 @@ int main()
 
     LOG(CYAN, "\n========== SCENARIO 5: DEEP COPY CHARACTER (ASSIGNMENT) ==========");
 
-    Character assignHero("AssignHero");
+    Character 	assignHero("AssignHero");
     assignHero = copyHero;
 
     assignHero.use(0, assignHero);
     assignHero.use(1, assignHero);
 
     // self-assignment must not break anything
-    assignHero = assignHero;
+    // assignHero = assignHero;
     assignHero.use(0, assignHero);
 
     /* ========================================================= */

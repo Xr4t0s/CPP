@@ -5,7 +5,7 @@
 
 int main()
 {
-	AAnimal animal; // impossible
+	// AAnimal animal; // impossible
 	Dog		dog; // no problem
 	Cat		cat; // no problem too
 
