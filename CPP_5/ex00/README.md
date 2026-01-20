@@ -39,9 +39,9 @@ class Errors {
 		~Errors();
 }
 ```
-My bureaucrat implementation is [here]
+> My [bureaucrat implementation]
 
-[here]: include/Bureaucrat.hpp
+[bureaucrat implementation]: include/Bureaucrat.hpp
 
 ---
 
@@ -98,10 +98,10 @@ int main() {
 }
 ```
 
-That's all, nothing else here but creating the Bureaucrat class : you can see [here], the constructors and the functions upgrade and downgrade verifies if grades are not over/underflowing, and if it's the case, they throws correctly errors so we can catch them in [main.cpp]
+That's all, nothing else here but creating the Bureaucrat class : you can see [here] in the definitions, the constructors and the upgrade and downgrade functions verifies if grades are not over/underflowing, and if it's the case, they throws correctly errors so we can catch them in [main].
 
 [here]: src/Bureaucrat.cpp 
-[main.cpp]: src/main.cpp
+[main]: src/main.cpp
 
 ## **Notes**
 - You can see that we used `catch (std::exception& e) {...}` to catch our exception as a reference, because if we don't , polymorphism **will not be respected** and so, the `what()` function will not be **interpreted as overrided**, and you will see the basic `what()` message when you catch your error, so don't forget that : **always catch custom errors as references.**
