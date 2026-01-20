@@ -45,7 +45,7 @@ class Errors {
 
 ---
 
-### Now, we want to **use this to handle an error**, in this example we :
+### Now, we want to use this to **handle an error**, in this example we :
 - **Create an *Errors* class**
 - **Declare a *SpamError* struct inside, who herits from std::exception**
 - **Override *what()***
@@ -75,7 +75,7 @@ class Errors {
 
 // We override std::exception::what() function to allow returning custom errors
 const char*	Errors::SpamError::what() const throw() {
-	return "Target can process, stop spamming";
+	return "Target can't process, stop spamming";
 }
 
 // Function that throw in case of spam 
@@ -96,6 +96,12 @@ int main() {
 
 	return 0;
 }
+```
+
+It gives :
+```bash
+➜  CPP_5 git:(main) ✗ ./a.out
+Target can't process, stop spamming
 ```
 
 That's all, nothing else here but creating the Bureaucrat class : you can see [here] in the definitions, the constructors and the upgrade and downgrade functions verifies if grades are not over/underflowing, and if it's the case, they throws correctly errors so we can catch them in [main].
