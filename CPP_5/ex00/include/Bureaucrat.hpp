@@ -6,6 +6,7 @@ class Bureaucrat {
 		int					_grade;
 	
 	public:
+		// Errors
 		struct GradeTooHighException : std::exception {
 			public:
 				const char* what() const throw();
