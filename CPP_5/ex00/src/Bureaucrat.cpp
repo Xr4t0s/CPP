@@ -2,14 +2,12 @@
 
 // Constructions
 Bureaucrat::Bureaucrat() : _name("Random"), _grade(150) {}
-Bureaucrat::Bureaucrat(int grade, const std::string& name) : _name(name) {
+Bureaucrat::Bureaucrat(int grade, const std::string& name) : _name(name), _grade(grade) {
 	if (grade < 1) {
 		throw Bureaucrat::GradeTooLowException(); 
 	} else if (grade > 150) {
 		throw Bureaucrat::GradeTooHighException();
 	}
-
-	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat& copy ) : _name(copy._name), _grade(copy._grade) {}
