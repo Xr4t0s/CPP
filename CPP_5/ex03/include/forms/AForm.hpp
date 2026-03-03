@@ -9,9 +9,9 @@ class Bureaucrat;
 class AForm {
 	private:
 		const std::string	_name;
-		bool				_signed;
-		const int			_signReqGrade;
-		const int			_execReqGrade;
+		bool							_signed;
+		const int					_signReqGrade;
+		const int					_execReqGrade;
 	
 	public:
 		struct GradeTooHighException : std::exception {
@@ -33,9 +33,9 @@ class AForm {
 		AForm& operator=( const AForm& rhs);
 		
 		const std::string& 	getName( void ) const;
-		bool				getSigned( void ) const;
-		const int&			getSignGrade( void ) const;
-		const int&			getExecGrade( void ) const;
+		bool								getSigned( void ) const;
+		const int&					getSignGrade( void ) const;
+		const int&					getExecGrade( void ) const;
 
 		void beSigned( const Bureaucrat& bureaucrat);
 

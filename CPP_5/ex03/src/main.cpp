@@ -4,16 +4,16 @@
 
 int main() {
 	Intern someRandomIntern;
-	AForm* rrf;
-	rrf = someRandomIntern.makeForm("presidential request", "Boss");
-	if (!rrf) return 0;
+	AForm* form;
+	form = someRandomIntern.makeForm("presidential request", "Boss");
+	if (!form) return 0;
 
 	Bureaucrat boss(1, "Boss");
 
 	try {
-		boss.signForm(*rrf);
-		boss.executeForm(*rrf);
+		boss.signForm(*form);
+		boss.executeForm(*form);
 	} catch (std::exception& e) {}
 	
-	delete rrf;
+	delete form;
 }

@@ -37,7 +37,7 @@ class AForm {
 		const int&			getSignGrade( void ) const;
 		const int&			getExecGrade( void ) const;
 
-		void beSigned( const Bureaucrat& bureaucrat);
+		void beSigned( const Bureaucrat& bureaucrat );
 
 		void execute(Bureaucrat const & executor);
 

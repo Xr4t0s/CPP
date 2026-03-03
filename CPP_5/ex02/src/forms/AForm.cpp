@@ -32,8 +32,9 @@ AForm& AForm::operator=( const AForm& rhs ) {
 
 void	AForm::beSigned( const Bureaucrat& bureaucrat) {
 	if (bureaucrat.getGrade() > this->_signReqGrade)
-		throw Bureaucrat::GradeTooLowException(); 	// le sujet demande AForm::GradeToo... mais Bureaucrat est plus logique
-													// sinon on peut faire la condition inverse et renvoyer les exceptions de AForm
+		// throw Form::GradeTooHighException();
+		throw Bureaucrat::GradeTooLowException(); 	// le sujet demande AForm::GradeTooLow... mais Bureaucrat est plus logique
+													// Si un formulaire ne peut etre signé son grade serait trop grand pas trop petit
 	_signed = true;
 }
 
