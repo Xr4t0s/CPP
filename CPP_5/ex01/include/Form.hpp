@@ -25,9 +25,9 @@ class Form {
 		Form& operator=( const Form& rhs);
 		
 		const std::string& 	getName( void ) const;
-		bool				getSigned( void ) const;
-		const int&			getSignGrade( void ) const;
-		const int&			getExecGrade( void ) const;
+		bool								getSigned( void ) const;
+		const int&					getSignGrade( void ) const;
+		const int&					getExecGrade( void ) const;
 
 		void beSigned( const Bureaucrat& bureaucrat);
 
