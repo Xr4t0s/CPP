@@ -1,8 +1,6 @@
 #include <iostream>
 
-#include "Swap.tpp"
-#include "Min.tpp"
-#include "Max.tpp"
+#include "Main.hpp"
 
 int main( void ) {
 	int a = 2;
