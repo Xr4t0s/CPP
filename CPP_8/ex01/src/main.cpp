@@ -13,7 +13,7 @@ int main() {
 		span.addNumber(-5);
 		span.addNumber(0);
 		span.addNumber(5);
-		span.addNumber(40);
+		span.addNumber(50);
 		std::cout << span << std::endl;
 		std::cout << "Longest : " << span.longestSpan() << std::endl;
 		std::cout << "Shortest : " << span.shortestSpan() << std::endl;
