@@ -23,14 +23,9 @@ jobs:
         | cut -d/ -f1,2 \
         | sort -u)
 
-        echo "changed_dirs<<EOF" >> $GITHUB_OUTPUT
-        echo "$CHANGED" >> $GITHUB_OUTPUT
-        echo "EOF" >> $GITHUB_OUTPUT
-
     - name: Build modified directories
       run: |
         for d in ${{ steps.changes.outputs.changed_dirs }}; do
-          echo "Building $d"
           make -C "$d"
           make -C "$d" fclean
         done
