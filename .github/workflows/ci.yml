@@ -1,9 +1,7 @@
-name: C++ Modules CI
+name: CPP Modules CI
 
 on:
   push:
-    paths:
-      - 'cpp*/**'
 
 jobs:
   build:
@@ -12,20 +10,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install compiler
+      - name: install compiler
         run: sudo apt-get install -y build-essential
 
-      - name: Detect changed modules
-        id: changes
+      - name: detect modules changed
         run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | cut -d/ -f1 | sort -u > modules.txt
-          cat modules.txt
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+          | cut -d/ -f1 \
+          | sort -u > modules.txt
 
-      - name: Build changed modules
+      - name: build modules
         run: |
           while read module; do
             echo "Building $module"
-            for ex in $(find $module -name Makefile); do
-              make -C $(dirname $ex)
+            for dir in $(find $module -name Makefile); do
+                make -C $(dirname $dir)
             done
           done < modules.txt
