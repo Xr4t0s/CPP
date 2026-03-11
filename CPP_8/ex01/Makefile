@@ -1,4 +1,4 @@
-NAME    = span
+NAME    = 	span
 SRC     = src/main.cpp 
 
 OBJ_DIR = build
