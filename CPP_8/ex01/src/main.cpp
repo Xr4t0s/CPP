@@ -7,7 +7,7 @@ int main() {
 	Span< std::vector<int> > span;
 
 	try {
-		span.addNumber(100);
+		span.addNumber(10);
 		span.addNumber(-50);
 		span.addNumber(-40);
 		span.addNumber(-5);
