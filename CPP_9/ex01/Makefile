@@ -1,12 +1,6 @@
-NAME    = intern
+NAME    = rpn
 SRC     = 	src/main.cpp \
-						src/office/Bureaucrat.cpp \
-						src/office/Intern.cpp \
-						src/forms/AForm.cpp \
-						src/forms/ShrubberyCreationForm.cpp \
-						src/forms/RobotomyRequestForm.cpp \
-						src/forms/PresidentialPardonForm.cpp
-
+						src/RPN.cpp
 OBJ_DIR    = build
 OBJ        = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))
 
