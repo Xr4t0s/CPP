@@ -27,9 +27,18 @@ void	processLine(std::string line, uint nLine) {
 			value.erase(value.size() - 1);
 	}
 
-	for (int i = 0; value[i]; i++) {
-		if (!isdigit(value[i]))
-			buildErr(BAD_VALUE, line, nLine);
+	int mark = 0;
+
+	for (size_t i = 0; i < value.size(); i++)
+	{
+			if (value[i] == '.')
+			{
+					mark++;
+					if (mark > 1)
+							buildErr(BAD_VALUE, line, nLine);
+			}
+			else if (!isdigit(value[i]))
+					buildErr(BAD_VALUE, line, nLine);
 	}
 
 	if (value.empty() || date.empty())
@@ -82,7 +91,7 @@ void	processLine(std::string line, uint nLine) {
 	
 	std::map<std::string, double>::iterator it = rate.lower_bound(date);
 	if (it == rate.begin() && it->first != date)
-		throw buildErr(BAD_DATE, line, nLine, "Not earlier date");
+		throw buildErr(BAD_DATE, line, nLine, "No earlier date");
 	if (it != rate.begin() && it->first != date)
 		--it;
 	std::cout	<<
