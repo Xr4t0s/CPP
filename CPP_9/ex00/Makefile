@@ -1,7 +1,8 @@
 NAME    = btc
 SRC     = 	src/main.cpp \
-			src/utils/Parser.cpp \
-			src/errors/Errors.cpp
+						src/BitcoinExchange.cpp \
+						src/errors/Errors.cpp \
+						src/utils/Utils.cpp
 
 OBJ_DIR    = build
 OBJ        = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))
