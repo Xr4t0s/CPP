@@ -1,5 +1,4 @@
 #include "utils/Utils.hpp"
-#include "BitcoinExchange.hpp"
 
 void verifyFile(int ac, char **av) {
 	if (ac != 2)
