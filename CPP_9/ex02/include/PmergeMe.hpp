@@ -11,7 +11,6 @@ template<typename Container, typename RetContainer>
 class PmergeMe {
 	private:
 		Container			_pairs;
-		RetContainer	_ret;
 		bool					_addedZero;
 	
 		void					createOrderedPairs(char* input[]);
@@ -20,11 +19,13 @@ class PmergeMe {
 		void					sort(RetContainer order);
 
 	public:
+		RetContainer	_ret;
+
 		PmergeMe();
 		PmergeMe(const PmergeMe& copy);
 		PmergeMe&	operator=(const PmergeMe& rhs);
 
-		void run(char* input[], bool verbose);
+		double run(char* input[]);
 
 		~PmergeMe();
 	

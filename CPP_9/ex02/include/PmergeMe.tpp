@@ -21,7 +21,7 @@ PmergeMe<Container, RetContainer>::~PmergeMe() {}
 /// @param input Raw input values
 /// @param verbose Display or not the final container at the end of the algorithm
 template<typename Container, typename RetContainer>
-void	PmergeMe<Container, RetContainer>::run(char* input[], bool verbose) {
+double	PmergeMe<Container, RetContainer>::run(char* input[]) {
 	// Starting the chronometer
 	clock_t start = clock();
 
@@ -54,12 +54,9 @@ void	PmergeMe<Container, RetContainer>::run(char* input[], bool verbose) {
 	// Stopping the chronometer
 	clock_t end = clock();
 
-	double elapsed_ms = (double)(end - start) * 1000 / CLOCKS_PER_SEC;
-
-	std::cout << "Temps : " << elapsed_ms << " ms" << std::endl;
+	double elapsed_ms = (double)(end - start) * 1000000 / CLOCKS_PER_SEC;
 	
-	if (verbose)
-		displayContainer(this->_ret);
+	return elapsed_ms;
 }
 
 /// @brief Create the _pair stack (min,max) and sort it based on the max value

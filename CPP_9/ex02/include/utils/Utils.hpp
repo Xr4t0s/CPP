@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include <list>
 #include <deque>
 #include <ctime>
 
