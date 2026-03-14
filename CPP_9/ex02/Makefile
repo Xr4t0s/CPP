@@ -1,36 +1,29 @@
-NAME    = intern
-SRC     = 	src/main.cpp \
-						src/office/Bureaucrat.cpp \
-						src/office/Intern.cpp \
-						src/forms/AForm.cpp \
-						src/forms/ShrubberyCreationForm.cpp \
-						src/forms/RobotomyRequestForm.cpp \
-						src/forms/PresidentialPardonForm.cpp
+NAME    = PmergeMe
 
-OBJ_DIR    = build
-OBJ        = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))
+SRC_DIR = src
+OBJ_DIR = build
+
+SRC     = $(shell find $(SRC_DIR) -name "*.cpp")
+OBJ     = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
 
 CXX     = c++
-CF      = -Wall -Wextra -Werror -std=c++98 -g
-INC     = -I include/
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98 -g
+INC     = -I include
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: %.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
-	$(CXX) $(CF) $(INC) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INC) -c $< -o $@
 
 $(NAME): $(OBJ)
-	$(CXX) $(CF) $(OBJ) -o $(NAME)
-
-$(OBJ_DIR)/%.o: %.cpp $(INCLUDE) | $(OBJ_DIR)
-	$(CXX) $(CF) $(INC) -c $< -o $@ 
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
