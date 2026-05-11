@@ -14,7 +14,7 @@ enum Type {
 class Output {
 	public:
 		OutputChar		output_char;
-		OutputInt			output_int;
+		OutputInt		output_int;
 		OutputDouble	output_double;
 		OutputFloat		output_float;
 

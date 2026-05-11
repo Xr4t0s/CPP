@@ -14,18 +14,14 @@ In this module, we will learn how to use **C++ casts**. There's different type o
 ## EX00
 For this first exercise, we've only used the **static_cast** on our variables to simply interpret them like we want, but we had to make sure we're not loosing precision because between different types, bits aren't ordered the same way (like for an integer and a double/float).
 
-## EX01
-For the second exercice we learn how to use reintepret cast to force our custom interpretation if we're already sure about what we receive. So basically if a raw octet-stream is received in input and you know what structure is hidding behind this stream, you can for sur reintepret it like you want.
-
-## EX03
-In the third exercice, we learn how to use dynamic cast on pointers and references, we learn how to try an interpretation and manipulate the result
-
-## Examples
 ```cpp
 static_cast<int>('4'); // 52
 static_cast<double>(42.42f); // 42.42
 static_cast<float>(42);	// 42.0f
 ```
+
+## EX01
+For the second exercice we learn how to use reintepret cast to force our custom interpretation if we're already sure about what we receive. So basically if a raw octet-stream is received in input and you know what structure is hidding behind this stream, you can for sur reintepret it like you want.
 
 ```cpp
 // From data to octet stream for example
@@ -42,6 +38,9 @@ Data*			Serializer::deserialize(uintptr_t raw) {
 	return data;
 }
 ```
+
+## EX03
+In the third exercice, we learn how to use dynamic cast on pointers and references, we learn how to try an interpretation and manipulate the result
 
 ```cpp
 // Dynamic cast on pointer
