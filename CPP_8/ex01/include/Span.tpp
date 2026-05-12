@@ -12,7 +12,7 @@ Span<Container>::Span(const Span<Container>& copy) : _array(copy._array), _size(
 template< typename Container >
 Span<Container>& Span<Container>::operator=(const Span<Container>& rhs) {
 	if (this != &rhs) {
-		this._array = rhs._array;
+		this->_array = rhs._array;
 		this->_size = rhs._size;
 	}
 	return *this;

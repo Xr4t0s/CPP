@@ -4,7 +4,7 @@
 #include "Span.hpp"
 
 int main() {
-	Span< std::vector<int> > span;
+	Span< std::vector<int> > span(10);
 
 	try {
 		span.addNumber(10);
