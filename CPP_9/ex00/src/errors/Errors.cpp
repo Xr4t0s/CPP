@@ -25,7 +25,7 @@ const char* FileError::what() const throw() {
 }
 
 const char* UsageError::what() const throw() {
-	return "Usage: ..."; 
+	return "Usage: ./btc attachments/input.txt"; 
 }
 
 std::string	buildErr(FileErrors errorType, std::string line, uint nLine) {

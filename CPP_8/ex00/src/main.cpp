@@ -10,9 +10,8 @@ int main() {
 
 	try {
 		ret = easyfind(vec, 1);
-		std::cout << ret.base() << std::endl;
-		ret++;
-		std::cout << ret.base() << std::endl;
+		std::cout << *(ret.base()) << std::endl;
+		ret = easyfind(vec, 10);
 
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;

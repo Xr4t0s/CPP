@@ -15,7 +15,6 @@ Bureaucrat::Bureaucrat( const Bureaucrat& copy ) : _name(copy._name), _grade(cop
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat& rhs ) {
 	if (this != &rhs) {
 		_grade = rhs._grade;
-		// _name est constant donc pas dassignation
 	}
 	return *this;
 }

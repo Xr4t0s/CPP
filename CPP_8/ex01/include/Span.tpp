@@ -1,7 +1,7 @@
 #include "Span.hpp"
 
 template< typename Container >
-Span<Container>::Span() : _array(0), _size(__UINT32_MAX__) {}
+Span<Container>::Span() : _array(0), _size(0) {}
 
 template< typename Container >
 Span<Container>::Span(uint size) : _array(0), _size(size) {}
