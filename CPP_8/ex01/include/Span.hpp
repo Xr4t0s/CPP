@@ -12,7 +12,6 @@ class Span {
 		uint			_size;
 	
 	public:
-		Span();
 		Span(uint);
 		Span(const Span&);
 		Span& operator=(const Span&);
@@ -20,6 +19,9 @@ class Span {
 		Container getArray() const;
 
 		void	addNumber(uint);
+
+		template <typename Iterator>
+		void	addNumber(Iterator begin, Iterator end);
 
 		int	shortestSpan() const;
 		int	longestSpan() const;

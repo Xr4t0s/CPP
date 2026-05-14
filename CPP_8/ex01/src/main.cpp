@@ -4,19 +4,21 @@
 #include "Span.hpp"
 
 int main() {
-	Span< std::vector<int> > span(10);
+	Span< std::vector<int> > span(100000000);
 
 	try {
-		span.addNumber(10);
-		span.addNumber(-50);
-		span.addNumber(-40);
-		span.addNumber(-5);
-		span.addNumber(0);
-		span.addNumber(5);
-		span.addNumber(50);
+		std::vector<int> tab;
+		
+		for (int i = 0; i < 99999999; i++) {
+			tab.push_back(i);
+		}
+
+		span.addNumber(tab.begin(), tab.end());
+		
 		std::cout << span << std::endl;
 		std::cout << "Longest : " << span.longestSpan() << std::endl;
 		std::cout << "Shortest : " << span.shortestSpan() << std::endl;
+		
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}

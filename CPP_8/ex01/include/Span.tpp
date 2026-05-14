@@ -1,9 +1,6 @@
 #include "Span.hpp"
 
 template< typename Container >
-Span<Container>::Span() : _array(0), _size(0) {}
-
-template< typename Container >
 Span<Container>::Span(uint size) : _array(0), _size(size) {}
 
 template< typename Container >
@@ -22,10 +19,18 @@ template< typename Container >
 Span<Container>::~Span() {}
 
 
-
 template< typename Container >
 Container	Span<Container>::getArray() const {
 	return _array;
+}
+
+template< typename Container >
+template< typename Iterator >
+void	Span<Container>::addNumber(Iterator begin, Iterator end) {
+	while(begin != end) {
+		this->addNumber(*begin);
+		begin++;
+	}
 }
 
 template< typename Container >
