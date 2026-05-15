@@ -4,12 +4,12 @@
 #include "Span.hpp"
 
 int main() {
-	Span< std::vector<int> > span(100000000);
+	Span< std::vector<int> > span(2);
 
 	try {
 		std::vector<int> tab;
 		
-		for (int i = 0; i < 99999999; i++) {
+		for (int i = 0; i < 2; i++) {
 			tab.push_back(i);
 		}
 

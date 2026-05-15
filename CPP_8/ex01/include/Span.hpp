@@ -9,7 +9,7 @@ template< typename Container >
 class Span {
 	private:
 		Container	_array;
-		uint			_size;
+		uint		_size;
 	
 	public:
 		Span(uint);
