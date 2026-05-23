@@ -18,13 +18,13 @@ typedef enum {
 
 struct FileError : std::exception {
 	private:
-	std::string _error;
+		std::string _error;
 	
 	public:	
-	FileError(FileErrors reason);
-	FileError(FileErrors reason, std::string intel);
-	const char* what() const throw();
-	~FileError() throw();
+		FileError(FileErrors reason);
+		FileError(FileErrors reason, std::string intel);
+		const char* what() const throw();
+		~FileError() throw();
 };
 
 struct UsageError : std::exception {

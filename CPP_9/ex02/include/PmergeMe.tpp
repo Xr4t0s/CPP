@@ -67,6 +67,10 @@ void	PmergeMe<Container, RetContainer>::createOrderedPairs(char*	input[]) {
 	std::string				token = input[index];
 
 	while (input[index]) {
+		for (int i = 0; input[index][i]; i++) {
+			if (!isdigit(input[index][i]))
+				throw InvalidToken();
+		}
 		// Creating first pair entry
 		uint first = std::strtol(input[index++], NULL, 10);;
 
@@ -187,4 +191,9 @@ void	PmergeMe<Container, RetContainer>::sort(RetContainer order) {
 	if (this->_addedZero)
 		this->_ret.erase(this->_ret.begin());
 
+}
+
+template<typename Container, typename RetContainer>
+const char* PmergeMe<Container, RetContainer>::InvalidToken::what() const throw() {
+	return "Invalid token";
 }

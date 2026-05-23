@@ -1,7 +1,7 @@
 #include "BitcoinExchange.hpp"
 
 std::map<std::string, double>	rate;
-std::ifstream									fs;
+std::ifstream					fs;
 
 static void verifyValueFormat(const std::string& value, const std::string& line, uint nLine) {
 	int mark = 0;
@@ -131,6 +131,7 @@ void	processLine(std::string line, uint nLine) {
 void run() {	
 	std::string tmp;
 	uint		nLines = 1;
+	uint		processedLines = 0;
 
 	std::getline(fs, tmp);
 
@@ -139,10 +140,17 @@ void run() {
 
 	while (std::getline(fs, tmp)) {
 		nLines++;
+		if (tmp.empty() || (tmp.length() == 1 && tmp[0] == '\n'))
+			continue;
 		try {
 			processLine(tmp, nLines);
+			processedLines++;
 		} catch (std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
+	}
+
+	if (processedLines == 0) {
+		throw FileError(BAD_FILE, "No lines to process\n");
 	}
 }

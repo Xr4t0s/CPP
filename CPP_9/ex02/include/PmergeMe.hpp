@@ -32,6 +32,11 @@ class PmergeMe {
 	public:
 		typedef typename Container::iterator PairIterator;
 		typedef typename RetContainer::iterator RetIterator;
+
+		struct InvalidToken : std::exception {
+			public:
+				const char* what() const throw();
+		};
 };
 
 #include "PmergeMe.tpp"
