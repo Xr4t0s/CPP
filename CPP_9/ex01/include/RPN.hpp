@@ -10,6 +10,10 @@ struct InvalidToken : std::exception {
 	public:
 		const char* what() const throw();
 };
+struct ZeroDivision : std::exception {
+	public:
+		const char* what() const throw();
+};
 
 void run(char *input);
 
