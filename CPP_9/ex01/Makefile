@@ -1,4 +1,4 @@
-NAME    = rpn
+NAME    = RPN
 SRC     = 	src/main.cpp \
 						src/RPN.cpp
 OBJ_DIR    = build
