@@ -11,11 +11,14 @@ int main(int ac, char* av[]) {
 	}
 
 	for (int i = 1; av[i]; i++) {
-		if (!isdigit(av[i][0]) || std::string(av[i]).length() != 1) {
-			std::cout << "Only numbers are allowed for args" << std::endl;
-			return 1;
+		for (int j = 0; av[i][j]; j++) {
+			if (!isdigit(av[i][0])) {
+				std::cout << "Only numbers are allowed for args" << std::endl;
+				return 1;
+			}
 		}
 	}
+	
 	int i = 0;
 	std::cout << "Begin : ";
 	for (i = 1; av[i]; i++) {
