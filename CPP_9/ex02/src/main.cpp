@@ -5,7 +5,7 @@ typedef PmergeMe<std::deque< std::pair<uint,uint> >,	std::deque<int> > PmergeMeW
 typedef PmergeMe<std::list< std::pair<uint,uint> >,	std::list<int> > PmergeMeWithList;
 
 int main(int ac, char* av[]) {
-	if (ac < 3) {
+	if (ac < 2) {
 		std::cout << "Usage : ./PmergeMe <n_numbers>" << std::endl;
 		return 1;
 	}
@@ -18,7 +18,7 @@ int main(int ac, char* av[]) {
 			}
 		}
 	}
-	
+
 	int i = 0;
 	std::cout << "Begin : ";
 	for (i = 1; av[i]; i++) {
